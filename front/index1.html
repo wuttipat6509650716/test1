@@ -1,0 +1,236 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>คำร้องขอเพิ่ม-ถอนรายวิชา</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/x-icon" href="Thammasat_University.svg.png">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+
+    <!--Bootstrap 5-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!--Bootstrap 5-->
+
+</head>
+<body class="red">
+<script src="script.js"></script>
+
+<div id="image">
+    <img src="Thammasat_Horz_logo_black.png">
+    <img id="imageUser" src="user%20(1).png">
+</div>
+
+<form>
+    <div class="container p-4 my-3 bg-white" id="radius">
+        <h1 class="center-text"><strong>คำร้องขอเพิ่ม-ถอน รายวิชา</strong> </h1>
+        <p class="center-text">กรุณากรอกข้อมูลให้ถูกต้องและครบถ้วน เครื่องหมาย<span class="red-asterisk">*</span>แทน <span class="red-asterisk">ข้อมูลที่จำเป็นต้องกรอก</span></p>
+        <label for="date"><span class="red-asterisk">*</span>วัน/เดือน/ปี</label>
+        <input type="date" name="date" id="date" required>
+    </div>
+
+    <div class="container p-4 my-3 bg-white" id="radius1">
+        <h2>ข้อมูลส่วนตัว</h2>
+        <label class="col-sm-2" for=prefix><span class="red-asterisk">*</span>คำนำหน้าชื่อ</label>
+        <select name="prefix" id="prefix" required class="small-box">
+            <option value="นาย"> นาย </option>
+            <option value="นาง"> นาง </option>
+            <option value="นางสาว"> นางสาว </option>
+        </select>
+        <br>
+        <label class="col-sm-2" for=name><span class="red-asterisk">*</span>ชื่อ-นามสกุล</label>
+        <input name="name" id="name" required>
+        <br>
+        <label class="col-sm-2" for=studentId><span class="red-asterisk">*</span>เลขทะเบียนนักศึกษา</label>
+        <input name="studentId" id="studentId" required maxlength="10">
+        <br>
+        <label class="col-sm-2" for=studentYear><span class="red-asterisk">*</span>ชั้นปีที่ศึกษา</label>
+        <select name="studentYear" id="studentYear" required class="small-box">
+            <option value="1"> 1 </option>
+            <option value="2"> 2 </option>
+            <option value="3"> 3 </option>
+            <option value="1"> 4 </option>
+            <option value="2"> 5 </option>
+            <option value="3"> 6 </option>
+            <option value="1"> 7 </option>
+        </select>
+        <br>
+        <label class="col-sm-2" for=studyField><span class="red-asterisk">*</span>สาขาวิชา</label>
+        <input name="studyField" id="studyField" required>
+        <br>
+        <label class="col-sm-2" for=advisor><span class="red-asterisk">*</span>อาจารย์ที่ปรึกษา</label>
+        <input name="advisor" id="advisor" required>
+    </div>
+
+    <div class="container p-4 my-3 bg-white" id="radius2">
+        <h2>ที่อยู่ที่สามารถติดต่อได้ทางไปรษณีย์</h2>
+        <label class="col-sm-2" for=addressNumber><span class="red-asterisk">*</span>บ้านเลขที่</label>
+        <input name="addressNumber" id="addressNumber" required class="small-box">
+        <br>
+        <label class="col-sm-2" for=moo><span class="red-asterisk">*</span>หมู่ที่</label>
+        <input name="moo" id="moo" required class="small-box">
+        <br>
+        <label class="col-sm-2" for=tumbol><span class="red-asterisk">*</span>แขวง/ตำบล</label>
+        <input name="tumbol" id="tumbol" required>
+        <br>
+        <label class="col-sm-2" for=amphur><span class="red-asterisk">*</span>เขต/อำเภอ</label>
+        <input name="amphur" id="amphur" required>
+        <br>
+        <label class="col-sm-2" for=province><span class="red-asterisk">*</span>จังหวัด</label>
+        <input name="province" id="province" required>
+        <br>
+        <label class="col-sm-2" for=postalCode><span class="red-asterisk">*</span>รหัสไปรษณีย์</label>
+        <input name="postalCode" id="postalCode" placeholder="กรอกตัวเลข 5 หลัก" maxlength="5" required class="small-box">
+        <br>
+        <label class="col-sm-2" for=mobilePhone><span class="red-asterisk">*</span>โทรศัพท์มือถือ</label>
+        <input name="mobilePhone" id="mobilePhone" placeholder="กรอกตัวเลข 10 หลัก" maxlength="10" required>
+        <br>
+        <label class="col-sm-2" for=phone>โทรศัพท์บ้าน(ถ้ามี)</label>
+        <input name="phone" id="phone" placeholder="กรอกตัวเลข 10 หลัก" maxlength="10">
+        <br>
+    </div>
+
+    <div class="container p-4 my-3 bg-white" id="radius3">
+        <h2>รายละเอียดวิชาที่ต้องการเพิ่ม-ถอน</h2>
+        <label class="col-sm-2" for=nadd><span class="red-asterisk">*</span>มีความประสงค์ขอเพิ่ม</label>
+        <input type="number" name="nadd" id="nadd" min="0" max="10" required class="tinybox">
+        วิชา
+        <br>
+        <label class="col-sm-2" for=ndrop><span class="red-asterisk">*</span>มีความประสงค์ขอถอน</label>
+        <input type="number" name="ndrop" id="ndrop" min="0" max="10" required class="tinybox">
+        วิชา
+        <br>
+        <table class="table">
+            <tr class="center-text">
+                <th>ลำดับ</th>
+                <th>รหัสวิชา</th>
+                <th>ชื่อวิชา</th>
+                <th>section</th>
+                <th>วัน/เวลา</th>
+                <th>หน่วยกิต</th>
+                <th>ชื่อผู้สอน</th>
+                <th>ผู้สอนอนุญาต</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td> <input name="subjectCode" class="inputTable"> </td>
+                <td> <input name="subjectName" class="inputTable"> </td>
+                <td> <input name="subjectSection" class="inputTable"> </td>
+                <td> <input name="subjectDate" class="inputTable"> </td>
+                <td> <input name="subjectCredit" class="inputTable"> </td>
+                <td> <input name="subjectTeacher" class="inputTable"> </td>
+                <td> <input name="subjectTeacherCheck" class="inputTable" type="checkbox"> </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td> <input name="subjectCode" class="inputTable"> </td>
+                <td> <input name="subjectName" class="inputTable"> </td>
+                <td> <input name="subjectDate" class="inputTable"> </td>
+                <td> <input name="subjectCode" class="inputTable"> </td>
+                <td> <input name="subjectCredit" class="inputTable"> </td>
+                <td> <input name="subjectTeacher" class="inputTable"> </td>
+                <td> <input name="subjectTeacherCheck" class="inputTable" type="checkbox"> </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td> <input name="subjectCode" class="inputTable"> </td>
+                <td> <input name="subjectName" class="inputTable"> </td>
+                <td> <input name="subjectDate" class="inputTable"> </td>
+                <td> <input name="subjectCode" class="inputTable"> </td>
+                <td> <input name="subjectCredit" class="inputTable"> </td>
+                <td> <input name="subjectTeacher" class="inputTable"> </td>
+                <td> <input name="subjectTeacherCheck" class="inputTable" type="checkbox"> </td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td> <input name="subjectCode" class="inputTable"> </td>
+                <td> <input name="subjectName" class="inputTable"> </td>
+                <td> <input name="subjectDate" class="inputTable"> </td>
+                <td> <input name="subjectCode" class="inputTable"> </td>
+                <td> <input name="subjectCredit" class="inputTable"> </td>
+                <td> <input name="subjectTeacher" class="inputTable"> </td>
+                <td> <input name="subjectTeacherCheck" class="inputTable" type="checkbox"> </td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td> <input name="subjectCode" class="inputTable"> </td>
+                <td> <input name="subjectName" class="inputTable"> </td>
+                <td> <input name="subjectDate" class="inputTable"> </td>
+                <td> <input name="subjectCode" class="inputTable"> </td>
+                <td> <input name="subjectCredit" class="inputTable"> </td>
+                <td> <input name="subjectTeacher" class="inputTable"> </td>
+                <td> <input name="subjectTeacherCheck" class="inputTable" type="checkbox"> </td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td> <input name="subjectCode" class="inputTable"> </td>
+                <td> <input name="subjectName" class="inputTable"> </td>
+                <td> <input name="subjectDate" class="inputTable"> </td>
+                <td> <input name="subjectCode" class="inputTable"> </td>
+                <td> <input name="subjectCredit" class="inputTable"> </td>
+                <td> <input name="subjectTeacher" class="inputTable"> </td>
+                <td> <input name="subjectTeacherCheck" class="inputTable" type="checkbox"> </td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td> <input name="subjectCode" class="inputTable"> </td>
+                <td> <input name="subjectName" class="inputTable"> </td>
+                <td> <input name="subjectDate" class="inputTable"> </td>
+                <td> <input name="subjectCode" class="inputTable"> </td>
+                <td> <input name="subjectCredit" class="inputTable"> </td>
+                <td> <input name="subjectTeacher" class="inputTable"> </td>
+                <td> <input name="subjectTeacherCheck" class="inputTable" type="checkbox"> </td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td> <input name="subjectCode" class="inputTable"> </td>
+                <td> <input name="subjectName" class="inputTable"> </td>
+                <td> <input name="subjectDate" class="inputTable"> </td>
+                <td> <input name="subjectCode" class="inputTable"> </td>
+                <td> <input name="subjectCredit" class="inputTable"> </td>
+                <td> <input name="subjectTeacher" class="inputTable"> </td>
+                <td> <input name="subjectTeacherCheck" class="inputTable" type="checkbox"> </td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td> <input name="subjectCode" class="inputTable"> </td>
+                <td> <input name="subjectName" class="inputTable"> </td>
+                <td> <input name="subjectDate" class="inputTable"> </td>
+                <td> <input name="subjectCode" class="inputTable"> </td>
+                <td> <input name="subjectCredit" class="inputTable"> </td>
+                <td> <input name="subjectTeacher" class="inputTable"> </td>
+                <td> <input name="subjectTeacherCheck" class="inputTable" type="checkbox"> </td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td> <input name="subjectCode" class="inputTable"> </td>
+                <td> <input name="subjectName" class="inputTable"> </td>
+                <td> <input name="subjectDate" class="inputTable"> </td>
+                <td> <input name="subjectCode" class="inputTable"> </td>
+                <td> <input name="subjectCredit" class="inputTable"> </td>
+                <td> <input name="subjectTeacher" class="inputTable"> </td>
+                <td> <input name="subjectTeacherCheck" class="inputTable" type="checkbox"> </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="container p-4 my-3 bg-white" id="radius4">
+        <h2><span class="red-asterisk">*</span>เหตุผลในการยื่นคำร้องเพิ่ม-ถอนวิชา</h2>
+        <label for="cause"></label>
+        <input name="cause" id="cause" required>
+    </div>
+
+    <div class="container p-4 my-3 bg-white" id="radius5">
+        <label for="nfile">แนบไฟล์.pdf</label>
+        <input type="file" name="nfile" id="nfile" accept=".pdf">
+    </div>
+
+    <div class="center-button">
+        <button class="btn btn-primary" id="submit" onclick="validateAndAlert()">SUBMIT</button>
+    </div>
+
+</form>
+</body>
+</html>
