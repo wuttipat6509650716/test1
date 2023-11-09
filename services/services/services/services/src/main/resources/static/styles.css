@@ -1,0 +1,146 @@
+html{
+    font-family: 'Prompt', sans-serif;
+    font-size: 18px;
+    border: 50px solid transparent;
+    padding: 0px;
+    border-color: rgb(195, 0, 47);
+}
+
+.container-fluid{
+    font-family: 'Prompt', sans-serif;
+    padding: 1%;
+
+}
+
+#case{
+    width: 99%
+}
+
+img{
+    width: 160px
+}
+
+#image{
+    text-align: center;
+    transform: translateY(0%);
+}
+
+body{
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+}
+#Hi{
+    font-family: 'Prompt', sans-serif;
+    background-color: rgba(255,250,205);
+}
+
+h1.topBox,h2.topBox{
+    font-family: 'Prompt', sans-serif;
+    text-align: center;
+}
+
+.box{
+    font-family: 'Prompt', sans-serif;
+    height: 25px;
+}
+
+#sex{
+    height: 30px;
+    font-size: 18px;
+    width: 30%;
+    margin-right: 2.5%;
+}
+
+#myName,#lastName{
+    width: 30%;
+    margin-right: 1.5%;
+}
+
+#house,#village,#district,#prefecture,#county,#postcode{
+    width: 30%;
+    margin-right: 1.9%;
+}
+
+
+#labelSchoolYear{
+    margin-right: 29.5%;
+}
+
+#labelID{
+    margin-right: 26.1%;
+}
+
+#school_year,#ID,#branch{
+    width: 30%;
+}
+#school_year{
+    margin-right: 2.5%;
+}
+
+#ID{
+    margin-right: 1.5%;
+}
+
+#ajarn{
+    width: 60%;
+}
+
+.myFirst{
+    margin-right: 28%;
+}
+
+.red-asterisk {
+    color: red;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+#table,#table1{
+    color: black;
+    border-collapse: collapse;
+    border: 2px solid;
+}
+
+th,td{
+    border: 1px solid;
+}
+
+#submit{
+    font-size: 18px;
+}
+
+#myHouse,#myCounty{
+    margin-right: 28%;
+}
+
+#myPrefecture{
+    margin-right: 27%;
+}
+
+#myVillage{
+   margin-right: 29.5%;
+}
+
+#myMobilePhone{
+    margin-right: 35.5%;
+}
+
+#mobilePhone,#mobileHome{
+    width: 40%;
+    margin-right: 1.9%;
+}
+.middle{
+    text-align: center;
+    vertical-align: middle;
+}
+
+#cause{
+    width: 30%;
+}
+
+.inputTable{
+    width: 100%;
+}

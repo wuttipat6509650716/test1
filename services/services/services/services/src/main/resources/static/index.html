@@ -1,0 +1,393 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>คำร้องขอเพิ่ม-ถอนรายวิชา</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="Thammasat_University.svg.png">
+
+    <!--Bootstrap 4-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!--Bootstrap 4-->
+
+</head>
+<body>
+<div id="image">
+<img src = "Thammasat_University.svg.png">
+</div>
+
+<h1 class="topBox">คำร้องขอเพิ่ม-ถอนรายวิชา</h1>
+<h2 class="topBox">คณะวิทยาศาตร์และเทคโนโลยี มหาวิทยาลัยธรรมศาตร์ ศูนย์รังสิต</h2>
+
+<p id="Hi"><span class="red-asterisk">*</span>แทนการบังคับใส่ข้อมูล</p>
+
+<form class="container-fluid" action="/addDrop" method="GET" id="form">
+    <div>
+        <label for = "day">วันที่:<span class="red-asterisk">*</span></label> <br>
+        <input type="date" class="box" name="day" id="day" required>
+    </div>
+    <br>
+    <div>
+        <label for="case">เรื่อง:</label> <br>
+        <input class="box" name="case" id="case">
+    </div>
+    <p><span class="bold" >เรียน:</span> คณบดีคณะวิทยาศาตร์และเทคโนโลยี</p>
+    <hr>
+    <h3>ประวัตินักศึกษา</h3>
+    <div>
+        <label class="myFirst" for = "sex">คำนำหน้า:<span class="red-asterisk">*</span> </label>
+        <label class="myFirst" for="myName">ชื่อจริง:<span class="red-asterisk">*</span></label>
+        <label for="lastName">นามสกุล:<span class="red-asterisk">*</span></label>
+        <br>
+        <select class="box" name="sex" id="sex">
+            <option value="นาย"> นาย </option>
+            <option value="นาง"> นาง </option>
+            <option value="นางสาว"> นางสาว </option>
+        </select>
+        <input class="box" name="myName" id="myName" required placeholder="ชื่อจริง">
+        <input class="box" name="lastName" id="lastName" required placeholder="นามสกุล">
+    </div>
+    <br>
+    <div>
+        <label id="labelSchoolYear" for = "school_year">ชั้นปีที่:<span class="red-asterisk">*</span> </label>
+        <label id="labelID" for="ID">เลขทะเบียน:<span class="red-asterisk">*</span></label>
+        <label for = "branch">สาขาวิชา:<span class="red-asterisk">*</span> </label>
+        <br>
+        <select class="box" name="school_year" id="school_year">
+            <option value="1" name="school_year"> 1 </option>
+            <option value="2" name="school_year"> 2 </option>
+            <option value="3" name="school_year"> 3 </option>
+            <option value="4" name="school_year"> 4 </option>
+            <option value="5" name="school_year"> 5 </option>
+            <option value="6" name="school_year"> 6 </option>
+            <option value="7" name="school_year"> 7 </option>
+        </select>
+        <input class="box" name="ID" id="ID" required maxlength="10" placeholder="กรอกตัวเลข 10 หลัก" >
+        <input class="box" name = "branch" id="branch" required>
+    </div>
+    <br>
+    <div>
+        <label for = "ajarn">อาจารย์ที่ปรึกษา:<span class="red-asterisk">*</span></label>
+        <br>
+        <input class="box" name = "ajarn" id = "ajarn" required>
+    </div>
+    <br>
+    <hr>
+    <h3>ที่อยู่นักศึกษา (ที่อยู่ที่สามารถติดต่อได้ทางไปรษณีย์)</h3>
+    <div>
+        <label id="myHouse" for = "house">บ้านเลขที่:<span class="red-asterisk">*</span> </label>
+        <label id="myVillage" for = "village">หมู่ที่:<span class="red-asterisk">*</span> </label>
+        <label for = "district">แขวง/ตำบล:<span class="red-asterisk">*</span> </label>
+        <br>
+        <input class="box" name = "house" id="house" required>
+        <input class="box" name = "village" id="village" required>
+        <input class="box" name = "district" id="district" required>
+    </div>
+    <br>
+    <div>
+        <label id="myPrefecture" for = "prefecture">เขต/อำเภอ:<span class="red-asterisk">*</span> </label>
+        <label id="myCounty" for = "county">จังหวัด:<span class="red-asterisk">*</span> </label>
+        <label for = "postcode">รหัสไปรษณีย์:<span class="red-asterisk">*</span> </label>
+        <br>
+        <input class="box" name = "prefecture" id="prefecture" required>
+        <input class="box" name = "county" id="county" required>
+        <input class="box" name = "postcode" id="postcode" required maxlength="5" placeholder="กรอกตัวเลข 5 หลัก" >
+
+    </div>
+
+    <br>
+    <div>
+        <label id="myMobilePhone" for = "mobilePhone">โทรศัพท์มือถือ:<span class="red-asterisk">*</span> </label>
+        <label for = "mobileHome">โทรศัพท์บ้าน(ถ้ามี):</label>
+        <br>
+        <input class="box" name="mobilePhone" id="mobilePhone" maxlength="10" placeholder="กรอกตัวเลข 10 หลัก" >
+        <input class="box" name = "mobileHome" id="mobileHome" maxlength="10" placeholder="กรอกตัวเลข 10 หลัก" >
+    </div>
+    <br>
+    <hr>
+    <h3>การเพิ่ม-ถอนรายวิชา</h3>
+    <div>
+        <label for = "add1">มีความประสงค์ขอเพิ่ม:</label>
+        <input class="box" name = "add1" id = "add1" min="0" max="10" type="number">
+        ดังรายการต่อไปนี้
+    </div>
+    <br>
+    <div class="container-fluid">
+    <table id="table" class="container-fluid">
+        <thead>
+        <tr>
+            <th class="middle">ลำดับ</th>
+            <th class="middle">รหัสวิชา</th>
+            <th class="middle">ชื่อวิชา</th>
+            <th class="middle">section</th>
+            <th class="middle">วัน/เวลา</th>
+            <th class="middle">หน่วยกิต</th>
+            <th class="middle">ชื่อผู้สอน</th>
+            <th class="middle">ผู้สอนอนุญาต</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="middle">1</td>
+            <td><input name = "code" id = "code1" class="inputTable"></td>
+            <td><input name = "subject" id = "subject1" class="inputTable"></td>
+            <td><input name = "section" id = "section1" class="inputTable"></td>
+            <td><input name = "time" id = "time1" class="inputTable"></td>
+            <td><input name = "credit" id = "credit1" class="inputTable"></td>
+            <td><input name = "teacher" id = "ajarn1" class="inputTable"></td>
+            <td  class="middle"><input type="checkbox" id="checkbox1" name="checkbox"></td>
+        </tr>
+        <tr>
+            <td class="middle">2</td>
+            <td><input name = "code" id = "code2" class="inputTable"></td>
+            <td><input name = "subject" id = "subject2" class="inputTable"></td>
+            <td><input name = "section" id = "section2" class="inputTable"></td>
+            <td><input name = "time" id = "time2" class="inputTable"></td>
+            <td><input name = "credit" id = "credit2" class="inputTable"></td>
+            <td><input name = "teacher" id = "ajarn2" class="inputTable"></td>
+            <td  class="middle"><input type="checkbox" id="checkbox2" name="checkbox"></td>
+        </tr>
+        <tr>
+            <td class="middle">3</td>
+            <td><input name = "code" id = "code3" class="inputTable"></td>
+            <td><input name = "subject" id = "subject3" class="inputTable"></td>
+            <td><input name = "section" id = "section3" class="inputTable"></td>
+            <td><input name = "time" id = "time3" class="inputTable"></td>
+            <td><input name = "credit" id = "credit3" class="inputTable"></td>
+            <td><input name = "teacher" id = "ajarn3" class="inputTable"></td>
+            <td  class="middle"><input type="checkbox" id="checkbox3" name="checkbox"></td>
+        </tr>
+        <tr>
+            <td class="middle">4</td>
+            <td><input name = "code" id = "code4" class="inputTable"></td>
+            <td><input name = "subject" id = "subject4" class="inputTable"></td>
+            <td><input name = "section" id = "section4" class="inputTable"></td>
+            <td><input name = "time" id = "time4" class="inputTable"></td>
+            <td><input name = "credit" id = "credit4" class="inputTable"></td>
+            <td><input name = "teacher" id = "ajarn4" class="inputTable"></td>
+            <td  class="middle"><input type="checkbox" id="checkbox4" name="checkbox"></td>
+        </tr>
+        <tr>
+            <td class="middle">5</td>
+            <td><input name = "code" id = "code5" class="inputTable"></td>
+            <td><input name = "subject" id = "subject5" class="inputTable"></td>
+            <td><input name = "section" id = "section5" class="inputTable"></td>
+            <td><input name = "time" id = "time5" class="inputTable"></td>
+            <td><input name = "credit" id = "credit5" class="inputTable"></td>
+            <td><input name = "teacher" id = "ajarn5" class="inputTable"></td>
+            <td  class="middle"><input type="checkbox" id="checkbox5" name="checkbox"></td>
+        </tr>
+        <tr>
+            <td class="middle">6</td>
+            <td><input name = "code" id = "code6" class="inputTable"></td>
+            <td><input name = "subject" id = "subject6" class="inputTable"></td>
+            <td><input name = "section" id = "section6" class="inputTable"></td>
+            <td><input name = "time" id = "time6" class="inputTable"></td>
+            <td><input name = "credit" id = "credit6" class="inputTable"></td>
+            <td><input name = "teacher" id = "ajarn6" class="inputTable"></td>
+            <td  class="middle"><input type="checkbox" id="checkbox6" name="checkbox"></td>
+        </tr>
+        <tr>
+            <td class="middle">7</td>
+            <td><input name = "code" id = "code7" class="inputTable"></td>
+            <td><input name = "subject" id = "subject7" class="inputTable"></td>
+            <td><input name = "section" id = "section7" class="inputTable"></td>
+            <td><input name = "time" id = "time7" class="inputTable"></td>
+            <td><input name = "credit" id = "credit7" class="inputTable"></td>
+            <td><input name = "teacher" id = "ajarn7" class="inputTable"></td>
+            <td  class="middle"><input type="checkbox" id="checkbox7" name="checkbox"></td>
+        </tr>
+        <tr>
+            <td class="middle">8</td>
+            <td><input name = "code" id = "code8" class="inputTable"></td>
+            <td><input name = "subject" id = "subject8" class="inputTable"></td>
+            <td><input name = "section" id = "section8" class="inputTable"></td>
+            <td><input name = "time" id = "time8" class="inputTable"></td>
+            <td><input name = "credit" id = "credit8" class="inputTable"></td>
+            <td><input name = "teacher" id = "ajarn8" class="inputTable"></td>
+            <td  class="middle"><input type="checkbox" id="checkbox8" name="checkbox"></td>
+        </tr>
+        <tr>
+            <td class="middle">9</td>
+            <td><input name = "code" id = "code9" class="inputTable"></td>
+            <td><input name = "subject" id = "subject9" class="inputTable"></td>
+            <td><input name = "section" id = "section9" class="inputTable"></td>
+            <td><input name = "time" id = "time9" class="inputTable"></td>
+            <td><input name = "credit" id = "credit9" class="inputTable"></td>
+            <td><input name = "teacher" id = "ajarn9" class="inputTable"></td>
+            <td class="middle"><input type="checkbox" id="checkbox9" name="checkbox"></td>
+        </tr>
+        <tr>
+            <td class="middle">10</td>
+            <td><input name = "code" id = "code10" class="inputTable"></td>
+            <td><input name = "subject" id = "subject10" class="inputTable"></td>
+            <td><input name = "section" id = "section10" class="inputTable"></td>
+            <td><input name = "time" id = "time10" class="inputTable"></td>
+            <td><input name = "credit" id = "credit10" class="inputTable"></td>
+            <td><input name = "teacher" id = "ajarn10" class="inputTable"></td>
+            <td class="middle"><input type="checkbox" id="checkbox10" name="checkbox"></td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+
+    <label for = "drop1">มีความประสงค์ขอถอน:</label>
+    <input type="number" class="box" name = "drop1" id = "drop1" min="0" max="10">
+    ดังรายการต่อไปนี้
+
+    <div class="container-fluid">
+        <table id="table1" class="container-fluid">
+            <thead>
+            <tr>
+                <th class="middle">ลำดับ</th>
+                <th class="middle">รหัสวิชา</th>
+                <th class="middle">ชื่อวิชา</th>
+                <th class="middle">section</th>
+                <th class="middle">วัน/เวลา</th>
+                <th class="middle">หน่วยกิต</th>
+                <th class="middle">ชื่อผู้สอน</th>
+                <th class="middle">ผู้สอนอนุญาต</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="middle">1</td>
+                <td><input name = "code1" id = "code11" class="inputTable"></td>
+                <td><input name = "subject1" id = "subject11" class="inputTable"></td>
+                <td><input name = "section1" id = "section11" class="inputTable"></td>
+                <td><input name = "time1" id = "time11" class="inputTable"></td>
+                <td><input name = "credit1" id = "credit11" class="inputTable"></td>
+                <td><input name = "teacher1" id = "ajarn11" class="inputTable"></td>
+                <td  class="middle"><input type="checkbox" id="checkbox11" name="checkbox1"></td>
+            </tr>
+            <tr>
+                <td class="middle">2</td>
+                <td><input name = "code1" id = "code12" class="inputTable"></td>
+                <td><input name = "subject1" id = "subject12" class="inputTable"></td>
+                <td><input name = "section1" id = "section12" class="inputTable"></td>
+                <td><input name = "time2" id = "time12" class="inputTable"></td>
+                <td><input name = "credit1" id = "credit12" class="inputTable"></td>
+                <td><input name = "teacher1" id = "ajarn12" class="inputTable"></td>
+                <td  class="middle"><input type="checkbox" id="checkbox12" name="checkbox1"></td>
+            </tr>
+            <tr>
+                <td class="middle">3</td>
+                <td><input name = "code1" id = "code13" class="inputTable"></td>
+                <td><input name = "subject1" id = "subject13" class="inputTable"></td>
+                <td><input name = "section1" id = "section13" class="inputTable"></td>
+                <td><input name = "time1" id = "time13" class="inputTable"></td>
+                <td><input name = "credit1" id = "credit13" class="inputTable"></td>
+                <td><input name = "teacher1" id = "ajarn13" class="inputTable"></td>
+                <td  class="middle"><input type="checkbox" id="checkbox13" name="checkbox1"></td>
+            </tr>
+            <tr>
+                <td class="middle">4</td>
+                <td><input name = "code1" id = "code14" class="inputTable"></td>
+                <td><input name = "subject1" id = "subject14" class="inputTable"></td>
+                <td><input name = "section1" id = "section14" class="inputTable"></td>
+                <td><input name = "time1" id = "time14" class="inputTable"></td>
+                <td><input name = "credit1" id = "credit14" class="inputTable"></td>
+                <td><input name = "teacher1" id = "ajarn14" class="inputTable"></td>
+                <td  class="middle"><input type="checkbox" id="checkbox14" name="checkbox1"></td>
+            </tr>
+            <tr>
+                <td class="middle">5</td>
+                <td><input name = "code1" id = "code15" class="inputTable"></td>
+                <td><input name = "subject1" id = "subject15" class="inputTable"></td>
+                <td><input name = "section1" id = "section15" class="inputTable"></td>
+                <td><input name = "time1" id = "time15" class="inputTable"></td>
+                <td><input name = "credit1" id = "credit15" class="inputTable"></td>
+                <td><input name = "teacher1" id = "ajarn15" class="inputTable"></td>
+                <td  class="middle"><input type="checkbox" id="checkbox15" name="checkbox1"></td>
+            </tr>
+            <tr>
+                <td class="middle">6</td>
+                <td><input name = "code1" id = "code16" class="inputTable"></td>
+                <td><input name = "subject1" id = "subject16" class="inputTable"></td>
+                <td><input name = "section1" id = "section16" class="inputTable"></td>
+                <td><input name = "time1" id = "time16" class="inputTable"></td>
+                <td><input name = "credit1" id = "credit16" class="inputTable"></td>
+                <td><input name = "teacher1" id = "ajarn16" class="inputTable"></td>
+                <td  class="middle"><input type="checkbox" id="checkbox16" name="checkbox1"></td>
+            </tr>
+            <tr>
+                <td class="middle">7</td>
+                <td><input name = "code1" id = "code17" class="inputTable"></td>
+                <td><input name = "subject1" id = "subject17" class="inputTable"></td>
+                <td><input name = "section1" id = "section17" class="inputTable"></td>
+                <td><input name = "time1" id = "time17" class="inputTable"></td>
+                <td><input name = "credit1" id = "credit17" class="inputTable"></td>
+                <td><input name = "teacher1" id = "ajarn17" class="inputTable"></td>
+                <td  class="middle"><input type="checkbox" id="checkbox17" name="checkbox1"></td>
+            </tr>
+            <tr>
+                <td class="middle">8</td>
+                <td><input name = "code1" id = "code18" class="inputTable"></td>
+                <td><input name = "subject1" id = "subject18" class="inputTable"></td>
+                <td><input name = "section1" id = "section18" class="inputTable"></td>
+                <td><input name = "time1" id = "time18" class="inputTable"></td>
+                <td><input name = "credit1" id = "credit18" class="inputTable"></td>
+                <td><input name = "teacher1" id = "ajarn18" class="inputTable"></td>
+                <td  class="middle"><input type="checkbox" id="checkbox18" name="checkbox1"></td>
+            </tr>
+            <tr>
+                <td class="middle">9</td>
+                <td><input name = "code1" id = "code19" class="inputTable"></td>
+                <td><input name = "subject1" id = "subject19" class="inputTable"></td>
+                <td><input name = "section1" id = "section19" class="inputTable"></td>
+                <td><input name = "time1" id = "time19" class="inputTable"></td>
+                <td><input name = "credit1" id = "credit19" class="inputTable"></td>
+                <td><input name = "teacher1" id = "ajarn19" class="inputTable"></td>
+                <td class="middle"><input type="checkbox" id="checkbox19" name="checkbox1"></td>
+            </tr>
+            <tr>
+                <td class="middle">10</td>
+                <td><input name = "code1" id = "code20" class="inputTable"></td>
+                <td><input name = "subject1" id = "subject20" class="inputTable"></td>
+                <td><input name = "section1" id = "section20" class="inputTable"></td>
+                <td><input name = "time1" id = "time20" class="inputTable"></td>
+                <td><input name = "credit1" id = "credit20" class="inputTable"></td>
+                <td><input name = "teacher1" id = "ajarn20" class="inputTable"></td>
+                <td class="middle"><input type="checkbox" id="checkbox20" name="checkbox1"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div>
+        <label for = "cause">เหตุผลที่ขอเพิ่ม-ถอน:<span class="red-asterisk">*</span></label>
+        <input class="box" name = "cause" id = "cause" required>
+    </div>
+    <br>
+    <script>
+        function validateAndAlert() {
+          var postcodeInput = document.getElementById("postcode").value;
+          var IdInput = document.getElementById("ID").value;
+          var mobilePhoneInput = document.getElementById("mobilePhone").value;
+
+          var isValidPostCode = /^\d{5}$/.test(postcodeInput);
+          var isValidId = /^\d{10}$/.test(IdInput);
+          var isValidmobilePhone = /^\d{10}$/.test(mobilePhoneInput);
+
+          if (!isValidPostCode) {
+            alert("รหัสไปรษณีย์ต้องเป็นตัวเลข 5 หลัก");
+            event.preventDefault();
+          } else if(!isValidId){
+            alert("เลขทะเบียนนักศึกษาต้องเป็นตัวเลข 10 หลัก");
+            event.preventDefault();
+          } else if(!isValidmobilePhone){
+            alert("เบอร์โทรศัพท์ต้องเป็นตัวเลข 10 หลัก");
+            event.preventDefault();
+          }
+    }
+    </script>
+    <button id="submit" class="btn btn-warning" onclick="validateAndAlert()">submit</button>
+</form>
+</body>
+</html>
